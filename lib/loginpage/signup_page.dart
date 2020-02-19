@@ -25,13 +25,14 @@ class _SignUpPageState extends State<SignUpPage> {
             Container(
               padding: EdgeInsets.all(45),
               width: 330,
+              height: 240,
               decoration: new BoxDecoration(
                 color: Colors.transparent,
                 image: DecorationImage(
                   image: new AssetImage(
-                    'assets/foodtukk1.png',
+                    'assets/logo.jpeg',
                   ),
-                  fit: BoxFit.fill,
+                  fit: BoxFit.contain,
                 ),
                 shape: BoxShape.rectangle,
               ),
@@ -40,49 +41,52 @@ class _SignUpPageState extends State<SignUpPage> {
               elevation: 5.0,
               child: Padding(
                 padding: EdgeInsets.all(20.0),
-                child: Column(
-                  children: <Widget>[
-                    SizedBox(
-                      height: 20.0,
-                    ),
-                    TextField(
-                      controller: emailController,
-                      decoration: InputDecoration(
-                        hintText: "Email",
-                        hintStyle: TextStyle(
-                          color: Color(0xFFBDC2CB),
-                          fontSize: 18.0,
+                child: Form(
+
+                  child: Column(
+                    children: <Widget>[
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      TextField(
+                        controller: emailController,
+                        decoration: InputDecoration(
+                          hintText: "Email",
+                          hintStyle: TextStyle(
+                            color: Color(0xFFBDC2CB),
+                            fontSize: 18.0,
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 20.0,
-                    ),
-                    TextField(
-                      controller: passwordController,
-                      decoration: InputDecoration(
-                        hintText: "Password more then 6",
-                        hintStyle: TextStyle(
-                          color: Color(0xFFBDC2CB),
-                          fontSize: 18.0,
-                        ),
-                        suffixIcon: IconButton(
-                          onPressed: () {
-                            setState(() {
-                              _toggleVisibility = !_toggleVisibility;
-                            });
-                          },
-                          icon: _toggleVisibility
-                              ? Icon(Icons.visibility_off)
-                              : Icon(Icons.visibility),
-                        ),
+                      SizedBox(
+                        height: 20.0,
                       ),
-                      obscureText: _toggleVisibility,
-                    ),
-                    SizedBox(
-                      height: 20.0,
-                    ),
-                  ],
+                      TextField(
+                        controller: passwordController,
+                        decoration: InputDecoration(
+                          hintText: "Password more then 6",
+                          hintStyle: TextStyle(
+                            color: Color(0xFFBDC2CB),
+                            fontSize: 18.0,
+                          ),
+                          suffixIcon: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                _toggleVisibility = !_toggleVisibility;
+                              });
+                            },
+                            icon: _toggleVisibility
+                                ? Icon(Icons.visibility_off)
+                                : Icon(Icons.visibility),
+                          ),
+                        ),
+                        obscureText: _toggleVisibility,
+                      ),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -94,22 +98,29 @@ class _SignUpPageState extends State<SignUpPage> {
                   height: 50.0,
                   width: 250,
                   decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: Colors.lightBlueAccent,
                       borderRadius: BorderRadius.circular(25.0),
                       boxShadow: [
                         BoxShadow(blurRadius: 2, color: Colors.black)
                       ]),
-                  child: Center(
-                    child: Text(
-                      "Sign Up",
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.w800,
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext contex) => SignInPage()));
+                    },
+                    child: Center(
+                      child: Text(
+                        "Sign Up",
+                        style: TextStyle(
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.w800,
+                        ),
                       ),
                     ),
                   ),
                 ),
                 onTap: () {
+                  print(emailController);
+                  print(emailController);
                   // FirebaseAuth.instance
                   //     .createUserWithEmailAndPassword(
                   //         email: emailController.text,

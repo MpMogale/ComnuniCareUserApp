@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "691349296386",
+    "firebase_url": "https://communi-care-fast-food-a-8f0e3.firebaseio.com",
+    "project_id": "communi-care-fast-food-a-8f0e3",
+    "storage_bucket": "communi-care-fast-food-a-8f0e3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691349296386:android:fbb9657883582ba78cde1b",
+        "android_client_info": {
+          "package_name": "com.example.helloworld"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "691349296386-9v0rofmqq4t09c1gmdgcckkv12cknbi8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbZr6mlKsCeDJa3ngQt4NZ2rKWyLMLJR4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "691349296386-9v0rofmqq4t09c1gmdgcckkv12cknbi8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

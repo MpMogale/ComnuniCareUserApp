@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:helloworld/Screens/main_screen.dart';
+import 'package:helloworld/loginpage/signup_page.dart';
 
 
 class SignInPage extends StatefulWidget {
@@ -130,12 +131,17 @@ class _SignInPageState extends State<SignInPage> {
                   onTap: () {
                     Navigator.of(context).pushNamed('/signup');
                   },
-                  child: Text(
-                    "Sign up",
-                    style: TextStyle(
-                        color: Colors.lightBlueAccent,
-                        fontWeight: FontWeight.w800,
-                        fontSize: 18.0),
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>SignUpPage()));
+                    },
+                    child: Text(
+                      "Sign up",
+                      style: TextStyle(
+                          color: Colors.lightBlueAccent,
+                          fontWeight: FontWeight.w800,
+                          fontSize: 18.0),
+                    ),
                   ),
                 ),
               ],

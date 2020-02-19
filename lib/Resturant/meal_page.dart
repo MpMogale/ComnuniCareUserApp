@@ -34,19 +34,29 @@ class CollapsableHeaderPage extends StatelessWidget {
                   fontWeight:FontWeight.bold),),
                 background: Image.asset("assets/chicken.JPG",fit:BoxFit.cover),
               ),
+              
             ),
-            
           ];
         },
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             MealInfo(),
-            Container(
-              height: 200,
-              child: ListView(
-                children: <Widget>[
-                  MealItem(),
-                ],
+            Expanded(
+                          child: Container(
+                height: 500,
+                child: ListView(
+                  children: <Widget>[
+                    MealItem(),
+                    MealItem(),
+                    MealItem(),
+                    MealItem(),
+                    MealItem(),
+                    MealItem(),
+                    SizedBox(height: 40,),
+                    PlaceOrder()
+                  ],
+                ),
               ),
             ),
           ],
@@ -73,6 +83,24 @@ class MealInfo extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class PlaceOrder extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(23),
+          color: Colors.lightBlueAccent
+        ),
+        width: 250,
+        height: 40,
+        child: Text("Place Order")
+      ),    
     );
   }
 }

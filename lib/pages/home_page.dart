@@ -106,7 +106,7 @@ class PopularMeal2 extends StatelessWidget {
       elevation: 5,
       borderRadius: BorderRadius.circular(20),
         child: Container(
-         height: 320,
+         height: 340,
          
         child: GestureDetector(
           onTap: (){

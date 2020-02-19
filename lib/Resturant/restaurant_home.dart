@@ -11,13 +11,17 @@ class _RestaurantHomeState extends State<RestaurantHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
+        padding: EdgeInsets.all(10),
         children: <Widget>[
           Header(),
           RestaurantInfo(),
-          MenuCategorie(),
+          MenuCategorySelecto(),
+          MenuItem(),
+          MenuItem(),
           MenuItem(),
         ],
       ),
+
     );
   }
 }
@@ -89,10 +93,33 @@ class RestaurantInfo extends StatelessWidget {
   }
 }
 
+class MenuCategorySelecto extends StatefulWidget {
+  @override
+  _MenuCategorySelectoState createState() => _MenuCategorySelectoState();
+}
+
+class _MenuCategorySelectoState extends State<MenuCategorySelecto> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 40,
+      child: ListView.builder(
+        itemCount: menuCat.length,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (BuildContext context, int index){
+
+          return MenuCategorie(menuCat[index]);
+        },
+      ),
+    );
+  }
+}
+
 
 
 class MenuCategorie extends StatelessWidget {
-  const MenuCategorie({Key key}) : super(key: key);
+  final catName;
+  MenuCategorie(this.catName);
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +128,7 @@ class MenuCategorie extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.all(8.0),        
-        child: Text("Item1",style: TextStyle(fontWeight:FontWeight.bold,fontSize:16,),),
+        child: Text(catName,style: TextStyle(fontWeight:FontWeight.bold,fontSize:16,),),
       )
     );
   }
@@ -144,3 +171,13 @@ class MenuItem extends StatelessWidget {
     );
   }
 }
+
+List<String> menuCat =[
+  'JUST HOTWINGS',
+  ' SOULICIOUS SPECIALS',
+  'CHICKEN MEALS',
+  'SOULSISTER SPECIALS',
+  'JUST CHICKEN LICKEN',
+  'EASY BUCKS MENU',
+  "JUST CHICK'N BURGERS",
+  "TOP DELUXE"];

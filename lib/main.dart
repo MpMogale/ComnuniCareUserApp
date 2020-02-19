@@ -1,14 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/Resturant/meal_page.dart';
-import 'package:helloworld/Screens/main_screen.dart';
-import 'package:helloworld/pages/orders_page.dart';
-//import 'package:helloworld/loginpage/sigin_page.dart';
-//import 'package:helloworld/pages/home_page.dart';
-import 'package:helloworld/pages/search_page.dart';
-
-import 'Resturant/restaurant_home.dart';
 import 'loginpage/sigin_page.dart';
-//import 'loginpage/profile.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -21,16 +13,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
